@@ -42,7 +42,7 @@ class CDPAM():
         modfolder = os.path.abspath(os.path.join(inspect.getfile(self.__init__), '..', modfolder))
         #os.path.abspath(os.path.join(inspect.getfile(self.__init__), '..', 'weights/v%s/%s.pth'%(version,net)))
         model = FINnet(dev=device,encoder_layers=encoder_layers,encoder_filters=encoder_filters,ndim=ndim, classif_dp=classif_dp,classif_BN=classif_BN,classif_act=classif_act,input_size=input_size)
-        state = torch.load(modfolder,map_location="cpu")['state']
+        state = torch.load(modfolder,map_location="cpu", weights_only=False)['state']
         model.load_state_dict(state)
 
         model.to(device)

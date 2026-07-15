@@ -33,7 +33,7 @@ def load_audio(path):
     inputData,fs  = librosa.load(path,sr=22050)
     
     ## convert to 16 bit floating point
-    inputData = np.round(inputData.astype(np.float)*32768)
+    inputData = np.round(inputData.astype(float)*32768)
     
     inputData  = np.reshape(inputData, [-1, 1])
     

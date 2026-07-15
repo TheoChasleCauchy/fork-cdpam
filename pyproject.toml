@@ -1,0 +1,6 @@
+[project]
+name = "fork-cdpam"
+version = "1.0.0"
+description = "Add your description md"
+requires-python = ""
+dependencies = []
